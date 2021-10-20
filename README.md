@@ -1,2 +1,2 @@
-# jiuterm
-A simple terminal
+# Jiuterm
+Sorry, no release yet!
