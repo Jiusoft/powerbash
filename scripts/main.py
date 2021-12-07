@@ -40,12 +40,12 @@ def run_command():
             if os.path.isfile(file):
                 print(file[len(path):])
     # 'cp' or 'copy' command
-    elif command == "cp" or "copy":
+    elif command == "cp" or command == "copy":
         original_path = input("Enter the path of the file you want to copy: ")
         copy_to = input("Enter the path where you want to copy it to: ")
         os.system(f'cp {original_path} {copy_to}')
     # 'mv' or 'move' command
-    elif command == "mv" or "move":
+    elif command == "mv" or command == "move":
         original_path = input("Enter the path of the file you want to move: ")
         move_to = input("Enter the path where you want to move it to: ")
         os.system(f'mv {original_path} {move_to}')
@@ -56,5 +56,8 @@ def run_command():
 
 # Allowing the users to run commands
 while True:
-    command = input(">>> ")
-    run_command()
+    try:
+        command = input(">>> ")
+        run_command()
+    except KeyboardInterrupt:
+        exit()
