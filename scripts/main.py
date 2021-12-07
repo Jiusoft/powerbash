@@ -56,8 +56,5 @@ def run_command():
 
 # Allowing the users to run commands
 while True:
-    try:
-        command = input(">>> ")
-        run_command()
-    except KeyboardInterrupt:
-        exit()
+    command = input(">>> ")
+    run_command()
