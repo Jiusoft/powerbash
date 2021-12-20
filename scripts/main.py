@@ -56,6 +56,12 @@ def run_command():
         move_to = input("Enter the path where you want to move it to: ")
         os.system(f'mv {original_path} {move_to}')
 
+    elif command == "rn" or command == "ren" or command == "rename":
+        path = input("Enter the path of the folder the file you want to rename is located in: ")
+        original_name = input("Enter the original name of the file you want to rename: ")
+        new_name = input("Enter the new name of the file you want to rename: ")
+        os.system(f'cd {path} && mv {original_name} {new_name}')
+
     # Error message when command not found
     else:
         print(f"Sorry, the command \"{command}\" is not recognised as a command!")
