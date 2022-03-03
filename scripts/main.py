@@ -1,6 +1,7 @@
 # Importing needed packages
 import os
 import glob
+import csv
 import socket
 
 host_name = socket.gethostname()
@@ -19,6 +20,21 @@ print("""
 
 # Defining 'run_command()' function and make it run commands
 def run_command():
+    tmp = list(command)
+    tmp1 = []
+    for item in tmp:
+        if item != "\\":
+            tmp1.append(item)
+        else:
+            tmp1.append("escape")
+    for item in tmp1:
+        if item == "escape":
+            i = tmp1.index(item)
+            del tmp1[i]
+            del tmp1[i]
+    command_list = "".join(tmp1).split()
+    del tmp, tmp1
+    print(command_list)
 
     # 'exit' command
     if command == "exit":
